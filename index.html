@@ -58,22 +58,32 @@
     </style>
 </head>
 <body>
+    </div>
     <div class="container">
         <h1>Chúc Mừng Sinh Nhật Mun!</h1>
         <p>Chúc Mun có một ngày sinh nhật thật ý nghĩa và hạnh phúc nhé! Yêu em!!!</p>
         <p>Tặng em một món quà. Bấm vào Nhận quà để biết thông tin chi tiết nha</p>
-        <button onclick="showPinInput()">Nhận quà</button>
+				<button onclick="showPinInput()">Nhận quà</button>
         <div class="pin-input">
-            <form action="verify.php" method="post">
-                <input type="password" name="pin" placeholder="Nhập ngày tháng sinh của em nhá. Có 4 chữ số ạ">
-                <button type="submit">Gét Gô</button>
-            </form>
+            <input type="password" id="pin" placeholder="Nhập ngày tháng sinh của em nhá. Có 4 chữ số ạ">
+            <button onclick="verifyPin()">Gét Gô</button>
         </div>
     </div>
 
     <script>
         function showPinInput() {
             document.querySelector('.pin-input').style.display = 'block';
+        }
+
+        function verifyPin() {
+            const pin = document.getElementById('pin').value;
+            const correctPin = '1706'; // Mã PIN đúng, bạn có thể thay đổi mã này
+
+            if (pin === correctPin) {
+                window.location.href = 'video.mp4'; // Đường dẫn tới file video của bạn
+            } else {
+                alert('Sai rồi hớ nì.');
+            }
         }
     </script>
 </body>
