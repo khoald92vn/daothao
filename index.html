@@ -87,7 +87,7 @@
         function verifyPin() {
             const pin = document.getElementById('pin').value;
             const correctPin = '1706'; // Mã PIN đúng, bạn có thể thay đổi mã này
-            const encryptedUrl = 'aHR0cHM6Ly8xZHJ2Lm1zL3YvcyFBbHFOWG9zNWhscnJoTnBTTkdaMEVNcmtXeExhZVE/ZT15VmFWdTE='; // URL mã hóa của video bằng Base64
+            const encryptedUrl = 'aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1XdThOZUZYYW9PYyZ0PTg1cw=='; // URL mã hóa của video bằng Base64
 
             if (pin === correctPin) {
                 const videoUrl = atob(encryptedUrl); // Giải mã URL video
