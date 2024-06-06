@@ -42,21 +42,7 @@
         button:hover {
             background-color: #ff4500;
         }
-        .pin-input {
-            display: none;
-            margin-top: 20px;
-        }
-        input[type="password"] {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            width: 100%;
-            box-sizing: border-box;
-        }
         .video-container {
-            display: none;
             margin-top: 20px;
         }
     </style>
@@ -66,36 +52,18 @@
         <h1>Chúc Mừng Sinh Nhật Mun!</h1>
         <p>Chúc Mun có một ngày sinh nhật thật ý nghĩa và hạnh phúc nhé! Yêu em!!!</p>
         <p>Tặng em một món quà. Bấm vào Nhận quà để biết thông tin chi tiết nha</p>
-        <button onclick="showPinInput()">Nhận quà</button>
-        <div class="pin-input">
-            <input type="password" id="pin" placeholder="Nhập ngày tháng sinh của em nhá. Có 4 chữ số ạ">
-            <button onclick="verifyPin()">Gét Gô</button>
-        </div>
-        <div class="video-container" id="videoContainer">
-            <video width="100%" controls id="video">
-                <source id="videoSource" type="video/mp4">
+        <button onclick="showVideo()">Nhận quà</button>
+        <div class="video-container" id="videoContainer" style="display:none;">
+            <video width="100%" controls>
+                <source src="video.mp4" type="video/mp4">
                 Trình duyệt của bạn không hỗ trợ thẻ video.
             </video>
         </div>
     </div>
 
     <script>
-        function showPinInput() {
-            document.querySelector('.pin-input').style.display = 'block';
-        }
-
-        function verifyPin() {
-            const pin = document.getElementById('pin').value;
-            const correctPin = '1706'; // Mã PIN đúng, bạn có thể thay đổi mã này
-            const encryptedUrl = 'aHR0cHM6Ly9raG9hbGQ5MnZuLmdpdGh1Yi5pby9kYW90aGFvL3ZpZGVvLm1wNA=='; // URL mã hóa của video bằng Base64
-
-            if (pin === correctPin) {
-                const videoUrl = atob(encryptedUrl); // Giải mã URL video
-                document.getElementById('videoSource').src = videoUrl;
-                document.getElementById('videoContainer').style.display = 'block';
-            } else {
-                alert('Sai rồi hớ nì.');
-            }
+        function showVideo() {
+            document.getElementById('videoContainer').style.display = 'block';
         }
     </script>
 </body>
