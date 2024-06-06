@@ -16,7 +16,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
 </head>
 <body>
     <video controls>
-        <source src="video.mp4" type="video/mp4">
+        <source src="https://github.com/khoald92vn/daothao/blob/private/video.mp4" type="video/mp4">
         Trình duyệt của bạn không hỗ trợ phát video.
     </video>
 </body>
