@@ -3,7 +3,7 @@ session_start();
 
 $correctPin = '1706';
 
-if (isset($_POST['pin'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pin'])) {
     $pin = $_POST['pin'];
     if ($pin === $correctPin) {
         $_SESSION['authenticated'] = true;
