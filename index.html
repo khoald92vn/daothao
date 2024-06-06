@@ -51,29 +51,32 @@
             width: 80%;
             box-sizing: border-box;
         }					
-				.small-images {
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-        }
         .small-images img {
 	    position: absolute;
             max-width: 150px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        } 
+	}
+	.img1 {
+            top: 10%;
+            left: 10%;
+        }
+        .img2 {
+            top: 50%;
+            left: 75%;
+        }
+        .img3 {
+            top: 80%;
+            left: 20%;
+        }
     </style>
 </head>
 <body>
 		<div class="small-images">
-        <img src="hinh1.jpg" alt="Ảnh 1">
-        <img src="hinh2.jpg" alt="Ảnh 2">
-        <img src="hinh3.jpg" alt="Ảnh 3">
+        <img src="hinh1.jpg" alt="Ảnh 1" class="img1">
+        <img src="hinh2.jpg" alt="Ảnh 2" class="img2">
+        <img src="hinh3.jpg" alt="Ảnh 3" class="img3">
     </div>
     <div class="container">
         <h1>Chúc Mừng Sinh Nhật Mun!</h1>
