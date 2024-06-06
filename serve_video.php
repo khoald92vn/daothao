@@ -6,7 +6,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     exit('Access denied');
 }
 
-$file = 'https://github.com/khoald92vn/daothao/blob/main/private/video.mp4'; // Adjust this path to your actual video location
+$file = '/var/www/private/video.mp4'; // Adjust this path to your actual video location
 
 if (file_exists($file)) {
     header('Content-Type: video/mp4');
