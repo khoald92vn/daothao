@@ -17,7 +17,7 @@
             background-size: cover;
         }
         .container {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -38,19 +38,67 @@
         button:hover {
             background-color: #ff4500;
         }
+				.pin-input {
+            display: none;
+            margin-top: 20px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 80%;
+            box-sizing: border-box;
+        }					
+				.small-images {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .small-images img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        } 
     </style>
 </head>
 <body>
+		<div class="small-images">
+        <img src="hinh1.jpg" alt="Ảnh 1">
+        <img src="hinh2.jpg" alt="Ảnh 2">
+        <img src="hinh3.jpg" alt="Ảnh 3">
+    </div>
     <div class="container">
         <h1>Chúc Mừng Sinh Nhật Mun!</h1>
         <p>Chúc Mun có một ngày sinh nhật thật ý nghĩa và hạnh phúc nhé! Yêu em!!!</p>
         <p>Tặng em một món quà. Bấm vào Nhận quà để biết thông tin chi tiết nha</p>
-        <button onclick="playVideo()">Nhận quà</button>
+				<button onclick="showPinInput()">Nhận quà</button>
+        <div class="pin-input">
+            <input type="password" id="pin" placeholder="Nhập ngày tháng sinh của em nhá. Có 4 chữ số ạ">
+            <button onclick="verifyPin()">Gét Gô</button>
+        </div>
     </div>
 
     <script>
-        function playVideo() {
-            window.location.href = 'HPBD_Thao20240617.mp4'; // Đường dẫn tới file video của bạn
+        function showPinInput() {
+            document.querySelector('.pin-input').style.display = 'block';
+        }
+
+        function verifyPin() {
+            const pin = document.getElementById('pin').value;
+            const correctPin = '1706'; // Mã PIN đúng, bạn có thể thay đổi mã này
+
+            if (pin === correctPin) {
+                window.location.href = 'video.mp4'; // Đường dẫn tới file video của bạn
+            } else {
+                alert('Sai rồi hớ nì.');
+            }
         }
     </script>
 </body>
