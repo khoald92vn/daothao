@@ -55,6 +55,10 @@
             width: 100%;
             box-sizing: border-box;
         }
+        .video-container {
+            display: none;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -64,16 +68,34 @@
         <p>Tặng em một món quà. Bấm vào Nhận quà để biết thông tin chi tiết nha</p>
         <button onclick="showPinInput()">Nhận quà</button>
         <div class="pin-input">
-            <form action="verify.php" method="POST">
-                <input type="password" name="pin" placeholder="Nhập ngày tháng sinh của em nhá. Có 4 chữ số ạ">
-                <button type="submit">Gét Gô</button>
-            </form>
+            <input type="password" id="pin" placeholder="Nhập ngày tháng sinh của em nhá. Có 4 chữ số ạ">
+            <button onclick="verifyPin()">Gét Gô</button>
+        </div>
+        <div class="video-container" id="videoContainer">
+            <video width="100%" controls id="video">
+                <source id="videoSource" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
         </div>
     </div>
 
     <script>
         function showPinInput() {
             document.querySelector('.pin-input').style.display = 'block';
+        }
+
+        function verifyPin() {
+            const pin = document.getElementById('pin').value;
+            const correctPin = '1706'; // Mã PIN đúng, bạn có thể thay đổi mã này
+            const encryptedUrl = 'aHR0cHM6Ly95b3VydmlkZW8udXJsL2hpdHRwczovL3lvdXJ2aWRlby51cmwvZXhhbXBsZS52aWRlbw=='; // URL mã hóa của video bằng Base64
+
+            if (pin === correctPin) {
+                const videoUrl = atob(encryptedUrl); // Giải mã URL video
+                document.getElementById('videoSource').src = videoUrl;
+                document.getElementById('videoContainer').style.display = 'block';
+            } else {
+                alert('Sai rồi hớ nì.');
+            }
         }
     </script>
 </body>
