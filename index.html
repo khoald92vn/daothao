@@ -15,6 +15,7 @@
             height: 100vh;
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-direction: column;
         }
         .container {
@@ -24,6 +25,10 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 80%;
             max-width: 500px;
+            position: absolute; /* Đặt container ở vị trí tuyệt đối */
+            top: 20px; /* Điều chỉnh khoảng cách từ trên xuống */
+            left: 50%;
+            transform: translateX(-50%); /* Canh giữa theo chiều ngang */
         }
         h1 {
             color: #ff6347;
@@ -53,17 +58,6 @@
             margin-bottom: 10px;
             width: 100%;
             box-sizing: border-box;
-        }
-				/* Media queries cho thiết bị di động */
-        @media (max-width: 768px) {
-            body {
-                background: url('image.jpg') no-repeat center top fixed; /* Định vị ảnh nền khác nhau trên điện thoại */
-                background-size: cover; /* Đảm bảo ảnh nền phủ kín màn hình */
-                padding-top: 30px; /* Điều chỉnh khoảng cách từ trên xuống trên thiết bị di động */
-            }
-            .container {
-                width: 90%;
-            }
         }
     </style>
 </head>
